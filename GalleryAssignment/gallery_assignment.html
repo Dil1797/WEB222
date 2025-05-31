@@ -1,0 +1,337 @@
+<!--Name: Dil Humyra Sultana Borna
+Student ID: 139166227
+Date: 05.10.2024-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Gallery</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            position: fixed; /* Fixes header position */
+            top: 0; /* Aligns at the top of the page */
+            z-index: 1000; /* Ensures it stays on top of other content */
+            background-color: #f9f9f9; /* Background to prevent overlap */
+        }
+
+        .header-bar {
+            height: 15px; /* Bar height */
+            background-color: hwb(140 29% 60%);
+            margin: 0;
+            position: fixed; /* Keeps the bar fixed */
+            left: 0;
+            right: 0;
+            z-index: 999; /* Stays above other content */
+        }
+
+        .header-bar:first-of-type {
+            top: 0; /* Position for the first bar */
+        }
+
+        .header-bar:last-of-type {
+            top: 180px; /* Position second bar just below the first */
+            z-index: 950; /* Stays below the first header */
+        }
+
+        h1, h3, h4 {
+            margin: 20px 0;
+            font-weight: bold;
+            color: transparent;
+            -webkit-text-stroke: 1px #3c6e47;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.0);
+        }
+
+        h1 {
+            font-size: 48px;
+        }
+
+        h3 {
+            font-size: 36px;
+        }
+
+        h4 {
+            font-size: 20px; /* Adjust size for h4 */
+        }
+
+        .highlight {
+            color: #3c6e47;
+            -webkit-text-stroke: 0;
+            position: relative;
+            top: 5px; /* Adjust the value to move it down more or less */
+        }
+
+        .layout {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            max-width: 1000px;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+            padding-top: 280px; /* Adjust this value based on the height of the header */
+            padding-left: 250px; /* Moves containers to the right */
+        }
+
+
+        .main-content {
+            max-width: 600px;
+            padding: 20px;
+            background-color: white;
+            border: 5px solid hwb(140 29% 60%);
+            box-shadow: 0 0 24px 8px hwb(140 29% 60%);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            margin-left: auto; /* This centers only the main container */
+            margin-right: auto; /* Centers the main container */
+        }
+
+        figure {
+            display: flex;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        figcaption {
+            max-width: 300px;
+            font-size: 12px; /* Adjust the size as per preference */
+        }
+
+        nav {
+            border: 5px solid hwb(140 29% 60%);
+            padding: 20px;
+            background-color: white;
+            border-radius: 15px;
+            width: 200px;
+            height: fit-content;
+            margin-left: 20px;
+            position: relative; /* Same level as main content */
+            top: 0; /* Aligns well */
+        }
+            
+        .small-icon {
+            width: 25px;
+            height: 25px;
+        }
+            
+        .center-icon {
+            display: block;
+            margin: 0 auto;
+        }
+            
+        ul {
+            margin: auto;        
+        }
+            
+        #horizontalList li {
+            display: block;
+        }
+            
+        li a {
+            display: block;
+            width: 160px;
+        }
+            
+        .right-align {
+            text-align: right;
+        }
+            
+        #horizontalList a {
+            text-decoration: none;
+            color: initial;
+            padding: 2px 5px; /* Small padding */
+            display: inline-block; /* Allows padding to take effect */
+            transition: background-color 0.3s;
+            border-radius: 5px;
+            max-width: 60px; /* Set a max width for tighter boxes */
+            white-space: nowrap; /* Prevents text from wrapping */
+        }
+            
+        #horizontalList a:hover {
+            color: white;
+            background-color: #3c6e47;
+        }
+
+        .section-style {
+            margin: 0;
+            padding: 0;
+            padding-top: 250px; /* Adjust this as needed */
+            margin-top: -200px; /* Adjust this as needed */
+        }
+
+       .figure-style {
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .figcaption-style {
+            max-width: 300px;
+            overflow: hidden; /* For text overflow */
+            font-size: 12px; /* Adjust size as per preference */
+        }
+
+        .up-arrow {
+            cursor: pointer;
+            margin-top: 10px;
+            display: block; /* Centers the up-arrow if needed */
+        }
+
+        .img-responsive {
+            width: 80%; /* Responsive width */
+            border-radius: 10px; /* Rounded corners */
+        }
+
+        .img-margin-right {
+            margin-right: 10px; /* Right margin for spacing between image and caption */
+        }
+
+        .figcaption-margin-right {
+            margin-right: 10px; /* Adjust this as needed */
+        }
+
+        .up-arrow-style {
+            cursor: pointer;        /* Enables click cursor */
+            margin-top: 10px;      /* Adds margin above the up-arrow */
+            display: block;         /* Ensures the image is treated as a block element */
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <p class="header-bar"></p>
+        <h1>At The Gallery</h1>
+        <h3>The <span class="highlight">Ansel Adams</span> Virtual Collection</h3>
+        <p class="header-bar"></p>
+    </header>
+
+    <main class="layout">
+        <article class="main-content">
+        <!-- Sections with images and descriptions -->
+       
+        <section id="book" class="section-style">
+            <figure class="figure-style">
+                <img src="book.jpg" alt="Description of Image" class="img-responsive img-margin-right">
+                <figcaption class="figcaption-style">
+                    <strong>Adams, Ansel</strong><br>
+                    Book<br>
+                    Black and White<br>
+                    Print<br>
+                    389 x 482 (pixels)
+                </figcaption>
+            </figure>
+            <img src="uparrow.png" alt="Scroll to top" class="small-icon up-arrow up-arrow-style center-icon" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+            <br>
+            <hr style="background-color: hwb(140 29% 60%); height: 5px; width: 100%; margin: 0;">
+        </section>
+        
+        <section id="city" class="section-style">
+            <figure class="figure-style">
+                <figcaption class="figcaption-style figcaption-margin-right"> <!-- Updated Line -->
+                    <strong>Adams, Ansel</strong><br>
+                    City<br>
+                    Black and White<br>
+                    Print<br>
+                    375 x 530 (pixels)
+                </figcaption>
+                <img src="city.jpg" alt="City Image" class="img-responsive">
+            </figure>
+            <img src="uparrow.png" alt="Scroll to top" class="small-icon up-arrow up-arrow-style center-icon" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+            <br>
+            <hr style="background-color: hwb(140 29% 60%); height: 5px; clear: both; width: 100%; margin: 0;">
+        </section>
+        
+        <section id="horse" class="section-style">
+            <figure class="figure-style">
+                <img src="horse.jpg" alt="Description of Image" class="img-responsive img-margin-right">
+                <figcaption class="figcaption-style figcaption-margin-right"> <!-- Updated Line -->
+                    <strong>Adams, Ansel</strong><br>
+                    Horse<br>
+                    Black and White<br>
+                    Print<br>
+                    487 x 482 (pixels)
+                </figcaption>
+            </figure>
+            <img src="uparrow.png" alt="Scroll to top" class="small-icon up-arrow up-arrow-style center-icon" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+            <br>
+            <hr style="background-color: hwb(140 29% 60%); height: 5px; clear: both; width: 100%; margin: 0;">
+        </section>
+        
+        <section id="nature" class="section-style">
+            <figure class="figure-style">
+                <figcaption class="figcaption-style figcaption-margin-right"> <!-- Updated Line -->
+                    <strong>Adams, Ansel</strong><br>
+                    Nature<br>
+                    Black and White<br>
+                    Print<br>
+                    512 x 450 (pixels)
+                </figcaption>
+                <img src="nature.jpg" alt="Nature Image" class="img-responsive">
+            </figure>
+            <img src="uparrow.png" alt="Scroll to top" class="small-icon up-arrow up-arrow-style center-icon" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+            <br>
+            <hr style="background-color: hwb(140 29% 60%); height: 5px; clear: both; width: 100%; margin: 0;">
+        </section>
+        
+        <section id="thunder" class="section-style">
+            <figure class="figure-style">
+                <img src="thunder.jpg" alt="Description of Image" class="img-responsive img-margin-right">
+                <figcaption class="figcaption-style figcaption-margin-right"> <!-- Updated Line -->
+                    <strong>Adams, Ansel</strong><br>
+                    Thunder<br>
+                    Black and White<br>
+                    Print<br>
+                    390 x 430 (pixels)
+                </figcaption>
+            </figure>
+            <img src="uparrow.png" alt="Scroll to top" class="small-icon up-arrow up-arrow-style center-icon" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+            <br>
+            <hr style="background-color: hwb(140 29% 60%); height: 5px; clear: both; width: 100%; margin: 0;">
+        </section>
+
+        <br>
+
+        <section class="right-align">
+            <strong>Please feel free to contact our curator at<br>123 Main Street<br>Toronto, Ontario<br>M1A 2B3</strong>
+            <br>
+            <br>
+            <strong>You can also reach us by<br></strong>
+            <a href="mailto:dhsborna@myseneca.ca">dhsborna@myseneca.ca</a>
+            <br>
+            <strong>Telephone: 416-555-6789</strong>
+            <img src="uparrow.png" alt="Scroll to top" class="small-icon up-arrow up-arrow-style center-icon" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+            <br>
+        </section>
+    </article>
+
+    <nav>
+        <h4>Available Collection</h4>
+        <ul id="horizontalList" class="right-align">
+            <li><a href="#book" style="text-decoration: none;">Book</a></li>
+            <li><a href="#city" style="text-decoration: none;">City</a></li>
+            <li><a href="#horse" style="text-decoration: none;">Horse</a></li>
+            <li><a href="#nature" style="text-decoration: none;">Nature</a></li>
+            <li><a href="#thunder" style="text-decoration: none;">Thunder</a></li>
+        </ul>
+        <br>
+    </nav>
+</main>
+
+</body>
+</html>
