@@ -1,0 +1,102 @@
+<!--Name: Dil Humyra Sultana Borna
+ID: 139166227-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Online Store</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="final.css"> <!-- Ensure correct path -->
+</head>
+<body>
+
+    <section class="order-grid">
+
+        <!-- Fruits -->
+        <article class="order-item">
+            <h3>Fruits</h3>
+            <h3>Foods</h3>
+            <h3>Drinks</h3>
+        </article>
+
+
+        <article class="order-item">
+            <select id="fruits-options">
+                <option value="none">Select Option</option>
+                <option value="Kiwi">Kiwi</option>
+                <option value="Banana">Banana</option>
+                <option value="Orange">Orange</option>
+                <option value="Strawberry">Strawberry</option>
+            </select>
+
+                        
+            <label for="foods-options"></label>
+            <select id="foods-options">
+                <option value="none">Select Option</option>
+                <option value="Burger">Burger</option>
+                <option value="Hot Dog">Hot Dog</option>
+                <option value="Pizza">Pizza</option>
+                <option value="Sandwich">Sandwich</option>
+            </select>
+
+            <label for="drinks-options"></label>
+            <select id="drinks-options">
+                <option value="none">Select Option</option>
+                <option value="Ice-Pops">Ice-Pops</option>
+                <option value="Ice-Tea">Ice-Tea</option>
+                <option value="Juice">Juice</option>
+                <option value="Cola">Cola</option>
+            </select>
+        </article>
+
+
+        <article class="order-item">
+            <input id="fruits-quantity" type="text" placeholder="Quantity" oninput="validateInput(this)" />
+
+            <label for="foods-quantity"></label>
+            <input id="foods-quantity" type="text" placeholder="Quantity" oninput="validateInput(this)" />
+
+            <label for="drinks-quantity"></label>
+            <input id="drinks-quantity" type="text" placeholder="Quantity" oninput="validateInput(this)" />
+        </article>
+        
+        <!-- Buttons Column -->
+        <article class="order-item">
+            <button onclick="placeOrder()">Order Now</button>
+            <button onclick="cancelOrder()">Cancel</button>
+            <button style="visibility: hidden;"></button>
+        </article>
+
+    </section>
+
+    <script>
+        function validateInput(input) {
+            // Remove non-numeric characters
+            input.value = input.value.replace(/[^0-9]/g, '');
+            // Limit to a maximum of three digits
+            if (input.value.length > 3) {
+                input.value = input.value.slice(0, 3);
+            }
+        }
+
+        function placeOrder() {
+            alert('Thank you for your order!');
+        }
+
+        function cancelOrder() {
+            // Reset the selected value in the dropdowns
+            document.getElementById('fruits-options').selectedIndex = 0; // Reset fruits dropdown
+            document.getElementById('foods-options').selectedIndex = 0; // Reset foods dropdown
+            document.getElementById('drinks-options').selectedIndex = 0; // Reset drinks dropdown
+
+            // Clear the quantity input fields
+            document.getElementById('fruits-quantity').value = ''; // Clear fruits quantity
+            document.getElementById('foods-quantity').value = ''; // Clear foods quantity
+            document.getElementById('drinks-quantity').value = ''; // Clear drinks quantity
+
+            alert('Order has been canceled.'); // Feedback message
+        }
+    </script>
+</body>
+</html>

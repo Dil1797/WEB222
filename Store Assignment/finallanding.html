@@ -1,0 +1,71 @@
+<!--Name: Dil Humyra Sultana Borna
+ID: 139166227-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Online Store</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="final.css"> <!-- Include your CSS file --> 
+</head>
+
+<body>
+    <header>
+        <p class="header-bar"></p> <!-- First header bar -->
+        <h1>
+            <span>l</span>
+            <span>e</span>
+            <span> </span> <!-- Space between words -->
+            <span>m</span>
+            <span>i</span>
+            <span>e</span>
+            <span>u</span>
+            <span>x</span>
+        </h1>
+        <p class="header-bar"></p> <!-- Second header bar -->
+    </header>
+
+    <script>
+        const letters = document.querySelectorAll('h1 span');
+        const colors = [
+            'rgb(0, 100, 0)',
+            'rgb(40, 160, 40)',
+            'rgb(80, 200, 80)',
+            'rgb(120, 240, 120)',
+            'rgb(160, 255, 160)',
+            'rgb(200, 255, 200)',
+            'rgb(255, 255, 0)',
+            'rgb(181, 144, 7)'
+        ];
+
+        document.querySelector('h1').addEventListener('mouseenter', () => {
+            letters.forEach((letter, index) => {
+                setTimeout(() => {
+                    letter.style.color = colors[index]; // Change color based on index
+                }, index * 100); // Delay for sequential effect
+            });
+        });
+
+        document.querySelector('h1').addEventListener('mouseleave', () => {
+            letters.forEach(letter => {
+                letter.style.color = 'transparent'; // Reset color to transparent when mouse leaves
+            });
+        });
+    </script>  
+
+    <!-- Menu Section -->
+    <nav class="menu">
+        <ul>
+            <li><a href="finalhome.html" target="content">Home</a></li>
+            <li><a href="finalfruits.html" target="content">Fruits</a></li>
+            <li><a href="finalfoods.html" target="content">Foods</a></li>
+            <li><a href="finaldrinks.html" target="content">Drinks</a></li>
+            <li><a href="finalorders.html" target="content">Orders</a></li>
+        </ul>
+    </nav>
+    
+    <iframe name="content" src="finalhome.html"></iframe>
+    
+</body>
+</html>
