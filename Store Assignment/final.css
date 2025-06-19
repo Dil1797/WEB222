@@ -1,0 +1,174 @@
+/*Name: Dil Humyra Sultana Borna
+ID: 139166227*/
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%; /* Ensure body and html take full height */
+    overflow: hidden; /* Prevent scrollbars */
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: #f9f9f9;
+}
+
+.header-bar {
+    height: 20px;
+    background: linear-gradient(to right, #18221a, #497a58, #18221a);
+    margin: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+.header-bar:first-of-type {
+    top: 0;
+}
+
+.header-bar:last-of-type {
+    top: 130px;
+    z-index: 950;
+}
+
+h1 {
+    margin: 20px 0;
+    font-weight: bold;
+    color: transparent;
+    -webkit-text-stroke: 1px #3c6e47;
+    font-size: 48px;
+}
+
+h1 span {
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.menu {
+    position: fixed;
+    right: 50px; /* Position from the right */
+    top: 200px; /* Position from the top */
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1001;
+    border: none;
+}
+
+.menu ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+.menu li {
+    margin: 10px 0; /* Space between menu items */
+}
+
+.menu a {
+    text-decoration: none; /* Remove underline from links */
+    color: black; /* Default text color */
+    transition: color 0.3s ease, transform 0.3s ease; /* Transition effects */
+    font-size: 14px; /* Default font size */
+    display: block; /* Make anchors block elements to take full width */
+    width: 100%; /* Ensure consistent width for all items */
+    padding: 5px 10px; /* Add some padding for clickable area */
+    text-align: center; /* Center the text */
+}
+
+.menu a:hover {
+    color: green; /* Change text color on hover */
+    transform: scale(2.1); /* Adjust scale to a smaller value */
+}
+
+.centered-image {
+    width: 50%; /* Image size */
+    max-width: 500px; /* Set a maximum width limit */
+    height: auto; /* Maintain aspect ratio */
+    margin: 20px 0;
+    position: absolute;
+    top: calc(200px + 20px);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+iframe {
+    border: none; /* Remove the default border */
+    width: 100%; /* Full width */
+    height: 80vh; /* Full height */
+}
+
+.product-grid {
+    display: grid;
+    gap: 1px;
+    padding: 1px;
+    margin-top: 200px;
+	grid-template-columns: repeat(3, .2fr);
+    margin-left: 400px;
+	
+}
+
+.product-item {
+    display: contents;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center; /* Center content within each cell */
+    padding: 5px;
+}
+
+.product-image {
+    width: 60%;
+    height: auto; /* Adjust height as needed */
+    object-fit: contain;
+}
+
+.order-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 1fr; /* 3 columns for products, 1 column for buttons */
+    gap: 20px; /* Spacing between the items */
+    padding: 20px; /* Padding inside the grid */
+    margin-top: 200px; /* Space added at the top */
+}
+
+.order-item {
+    display: grid; /* Use flexbox for internal layout */
+    flex-direction: column; /* Arrange items in a column */
+
+}
+
+.order-item label {
+    margin: 5px 0; /* Space above and below the labels */
+}
+
+.order-item select,
+.order-item input {
+    border: 2px solid black;
+    margin-top: 5px; /* Space above and below input/select */
+    width: 100%; /* Full width for inputs/selects */
+    background-color: #79e77d; /* Green background for buttons */
+    color: black; /* White text color */
+}
+
+.order-item button {
+    border: 2px solid black;
+    margin: 8px; /* Space above the buttons */
+    background-color: #79e77d; /* Green background for buttons */
+    color: black; /* White text color */
+    cursor: pointer; /* Changes cursor to pointer */
+    height: 50%;
+    width: 80%;
+}
+
+.order-item button:hover {
+    background-color: #046707; /* Darker green on hover */
+}
