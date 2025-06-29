@@ -1,0 +1,41 @@
+<!--Name: Dil Humyra Sultana Borna
+  ID: 139166227
+  Date: 30/11/2024 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="masterMind.css"> <!-- Adding css file -->
+    <title>MasterMind Game</title>
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <h1>MasterMind by Dil Humyra Sultana Borna</h1>
+    </header>
+
+    <!-- Container for displaying headers and results -->
+    <article class="results-article">
+        <h3>Results</h3>
+        <div class="results-header">
+            <div>Guess</div>
+            <div>Correctly Placed Digits</div>
+            <div>Incorrectly Placed Digits</div>
+        </div>
+        <div id="results" class="results-content"></div> 
+    </article>
+    
+    <!-- Container for displaying input and button -->
+    <article class="input-article">
+        <h4>Make a Guess</h4>
+        <input type="text" id="guessInput" aria-label="4-digit guess input" maxlength="4">
+        <button id="submitButton" disabled>Submit</button>
+    </article>
+
+    <!-- Adding js file -->
+    <script src="numberGenerator.js"></script>
+    <script src="gameLogic.js"></script>
+</body>
+</html>
