@@ -1,0 +1,60 @@
+/*Name: Dil Humyra Sultana Borna
+     ID: 139166227
+     Date: 7/12/2024*/
+
+     body {
+        font-family: Arial, sans-serif; /* Set the font style */
+        margin: 0; /* Remove default margin */
+        padding: 20px; /* Add padding around the body */
+        display: flex; /* Use flexbox */
+        flex-direction: column; /* Stack children vertically */
+        align-items: center; /* Center items horizontally */
+    }
+    
+    h1 {
+        text-align: center; /* Center the heading text */
+        margin-bottom: 20px; /* Space below the heading */
+    }
+    
+    article {
+        border: 4px solid #0010f7; /* Add border to article */
+        padding: 20px; /* Padding inside the article */
+        margin: 20px; /* Margin around the article */
+        min-height: 600px; /* Minimum height for the article */
+        width: 500px; /* Set the width of the article */
+        border-radius: 15px;
+        box-shadow: 0px 20px 10px -11px rgba(34, 77, 35, 0.735); /* Optional shadow effect */
+    }
+    
+    .product {
+        margin-bottom: 10px; /* Space between products */
+        padding-bottom: 10px; /* Padding at the bottom for spacing */
+        border-bottom: 1px solid #9c9c9c; /* Line below each product */
+    }
+    
+    .product-row {
+        margin-bottom: 10px;  /* Space between product rows */
+        padding: 10px 0;      /* Vertical padding */
+        border-bottom: 1px solid #ccc; /* Line below each product */
+    }
+    .submit-button {
+        display: block; /* Makes the button a block element */
+        margin: 20px auto; /* Center the button with auto margins */
+        padding: 5px 10px; /* Smaller padding */
+        font-size: 14px; /* Smaller font size */
+        border-radius: 5px; /* Rounded edges */
+        cursor: pointer; /* Change cursor to pointer on hover */
+        border: 1px solid #ccc; /* Border styling */
+        background-color: #f9f9f9; /* Background color */
+    }
+    
+    .submit-button:hover {
+        background-color: #e0e0e0; /* Change background color on hover */
+    }
+    .quantity-input {
+        width: 50px; /* Set the width to your desired size */
+        padding: 5px; /* padding for better appearance */
+        font-size: 14px; /* Adjust font size */
+        border-radius: 3px; /* rounded edges */
+        border: 1px solid #ccc; /* Border styling */
+    }
